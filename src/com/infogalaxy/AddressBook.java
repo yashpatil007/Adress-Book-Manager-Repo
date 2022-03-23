@@ -1,12 +1,17 @@
 package com.infogalaxy;
 
+import com.sun.deploy.util.SyncAccess;
+
+import java.util.ArrayList;
+
 import java.util.Scanner;
 
 public class AddressBook {
     Scanner sc = new Scanner(System.in);
-    Contacts contacts = new Contacts();
+    ArrayList<Contacts> contactlist = new ArrayList();
 
     public void getContacts() {
+        Contacts contacts = new Contacts();
         System.out.println("Enter the First Name :");
         contacts.setFirstname(sc.next());
         System.out.println("Enter the Last Name :");
@@ -23,13 +28,36 @@ public class AddressBook {
         contacts.setEmail(sc.next());
         System.out.println("Enter the Zip Code :");
         contacts.setZip(sc.next());
+        contactlist.add(contacts);
     }
-    public void displayContacts(){
-        System.out.println(contacts.toString());
+
+    public void displayContacts() {
+        for (int i = 0; i < contactlist.size(); i++) {
+            Contacts contacts = contactlist.get(i);
+            System.out.println(contactlist.toString());
+        }
     }
-    public static void main(String [] args){
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         AddressBook addressBook = new AddressBook();
-        addressBook.getContacts();
-        addressBook.displayContacts();
+        Contacts contacts = new Contacts();
+        int choice;
+        do {
+            System.out.println("*** CONTACT INVENTRY MANAGEMENT ***");
+            System.out.println("1.ADD EMPLOYEE \n2.DISPLAY EMPLOYEE \n3.EXIT");
+            System.out.println("Enter your choice :");
+            choice = sc.nextInt();
+            switch (choice) {
+                case 1:
+                    addressBook.getContacts();
+                    break;
+                case 2:
+                    addressBook.displayContacts();
+                    break;
+            }
+
+        }while (choice != 3);
+
     }
 }
