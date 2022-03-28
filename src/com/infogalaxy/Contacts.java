@@ -1,6 +1,8 @@
 package com.infogalaxy;
 
 public class Contacts {
+    public static String setfirstName;
+    private String getFirstname;
     private String firstname;
     private String lastname;
     private String address;
@@ -9,6 +11,7 @@ public class Contacts {
     private String mobno;
     private String email;
     private String zip;
+
 
     public void setFirstname(String firstname){
         this.firstname = firstname;
