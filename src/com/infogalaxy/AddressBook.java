@@ -9,24 +9,24 @@ public class AddressBook {
     ArrayList<Contacts> contactlist = new ArrayList();
 
     public void getContacts() {
-        Contacts contacts = new Contacts();
-        System.out.println("Enter the First Name :");
-        contacts.setFirstname(sc.next());
-//        System.out.println("Enter the Last Name :");
-//        contacts.setLastname(sc.next());
-//        System.out.println("Enter the Address :");
-//        contacts.setAddress(sc.next());
-//        System.out.println("Enter the City :");
-//        contacts.setAddress(sc.next());
+          Contacts contacts = new Contacts();
+          System.out.println("Enter the First Name :");
+          contacts.setFirstname(sc.next());
+          System.out.println("Enter the Last Name :");
+          contacts.setLastname(sc.next());
+          System.out.println("Enter the Address :");
+          contacts.setAddress(sc.next());
+          System.out.println("Enter the City :");
+          contacts.setAddress(sc.next());
           System.out.println("Enter the State :");
           contacts.setState(sc.next());
           System.out.println("Enter the Mobile No :");
           contacts.setMobno(sc.next());
-//        System.out.println("Enter the Email Id :");
-//        contacts.setEmail(sc.next());
-//        System.out.println("Enter the Zip Code :");
-//        contacts.setZip(sc.next());
-        contactlist.add(contacts);
+          System.out.println("Enter the Email Id :");
+          contacts.setEmail(sc.next());
+          System.out.println("Enter the Zip Code :");
+          contacts.setZip(sc.next());
+          contactlist.add(contacts);
     }
 
     public void displayContacts() {
@@ -61,7 +61,13 @@ public class AddressBook {
                 Contacts contacts = contactlist.get(i);
                 if(stateName.equals(contacts.getState())) {
                     System.out.println(contacts.getFirstname());
+                    System.out.println(contacts.getLastname());
+                    System.out.println(contacts.getAddress());
+                    System.out.println(contacts.getCity());
+                    System.out.println(contacts.getState());
                     System.out.println(contacts.getMobno());
+                    System.out.println(contacts.getEmail());
+                    System.out.println(contacts.getZip());
                     t=t+1;
                     System.out.println("Total Contacts Belongs To State :" +t);
                 }
@@ -106,9 +112,7 @@ public class AddressBook {
                     break;
 
             }
-
         }while (choice != 6);
 
     }
 }
-
